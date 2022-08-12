@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'myprofile.dart';
+import 'editprofile.dart';
+
 
 
 void main() {
-  runApp(const MyProfile());
+  runApp(const EditProfile());
 }
 
 

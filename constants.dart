@@ -6,6 +6,7 @@ const Color grey = Colors.grey;
 const Color red = Colors.redAccent;
 const Color yellow = Colors.yellowAccent;
 const Color yellow1 = Colors.yellow;
+const Color yellow2 = Color(0xffffa000);
 const Color lightblack = Colors.black87;
 const Color teal = Colors.teal;
 const Color orange = Colors.deepOrangeAccent;
@@ -144,7 +145,7 @@ class MyRow extends StatefulWidget {
     required this.radius,
     required this.circlecolor,
     required this.sizeboxwidth,
-    this.swidth=10,
+    this.swidth = 10,
   }) : super(key: key);
 
   @override
@@ -184,6 +185,104 @@ class _MyRowState extends State<MyRow> {
             alignment: Alignment.topLeft,
             child: Icon(Icons.arrow_back_ios_new)),
       ],
+    );
+  }
+}
+
+class MyTextfield extends StatefulWidget {
+  final String labeltext;
+  final IconData prefixicon;
+  final Color prefixcolor;
+  const MyTextfield(
+      {Key? key,
+      required this.labeltext,
+      required this.prefixicon,
+      required this.prefixcolor,})
+      : super(key: key);
+
+  @override
+  State<MyTextfield> createState() => _MyTextfieldState();
+}
+
+class _MyTextfieldState extends State<MyTextfield> {
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      style: const TextStyle(
+        fontFamily: ('Roboto Bold'),
+        fontSize: 14,
+        color: black,
+      ),
+      decoration: InputDecoration(
+        prefixIcon: Icon(
+          widget.prefixicon,
+          color: widget.prefixcolor,
+        ),
+        labelText: widget.labeltext,
+        labelStyle: const TextStyle(
+            color: grey, fontSize: 14, fontFamily: ('Roboto Bold')),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: grey, width: 2),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: grey, width: 2),
+          borderRadius: BorderRadius.circular(20),
+        ),
+      ),
+    );
+  }
+}
+
+class MyTextField2 extends StatefulWidget {
+  final String labeltext;
+  final IconData prefixicon;
+  final IconData suffixicon;
+  final Color prefixcolor;
+  final Color suffixcolor;
+  const MyTextField2(
+      {Key? key,
+      required this.labeltext,
+      required this.prefixicon,
+      required this.suffixicon,
+      required this.prefixcolor,
+      required this.suffixcolor})
+      : super(key: key);
+
+  @override
+  State<MyTextField2> createState() => _MyTextField2State();
+}
+
+class _MyTextField2State extends State<MyTextField2> {
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      style: const TextStyle(
+        fontFamily: ('Roboto Bold'),
+        fontSize: 14,
+        color: black,
+      ),
+      decoration: InputDecoration(
+        prefixIcon: Icon(
+          widget.prefixicon,
+          color: widget.prefixcolor,
+        ),
+        suffixIcon: Icon(
+          widget.suffixicon,
+          color: widget.suffixcolor,
+        ),
+        labelText: widget.labeltext,
+        labelStyle: const TextStyle(
+            color: grey, fontSize: 14, fontFamily: ('Roboto Bold')),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: grey, width: 2),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: grey, width: 2),
+          borderRadius: BorderRadius.circular(20),
+        ),
+      ),
     );
   }
 }
