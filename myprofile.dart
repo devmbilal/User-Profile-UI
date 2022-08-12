@@ -13,6 +13,7 @@ class _MyProfileState extends State<MyProfile> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
           backgroundColor: white,
@@ -64,6 +65,7 @@ class _MyProfileState extends State<MyProfile> {
                   ),
                   trailing: Icon(
                     FontAwesomeIcons.edit,
+                    color: blue,
                     size: 20,
                   ),
                 ),

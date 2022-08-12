@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:user_profile_ui/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
           backgroundColor: white,
@@ -79,7 +81,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                 ),
                 const SizedBox(
-                  height: 2,
+                  height: 15,
                 ),
                 const Center(
                   child: MyText(
@@ -90,7 +92,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 60,
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 6),
@@ -116,7 +118,7 @@ class _EditProfileState extends State<EditProfile> {
                       suffixcolor: Colors.blue),
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 40,
                 ),
                 const MyText(
                   tx: 'Birth Date (Optional)',
@@ -124,6 +126,41 @@ class _EditProfileState extends State<EditProfile> {
                   cl: grey,
                   fs: 14,
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
+                DatePicker(
+                  DateTime.now(),
+                  initialSelectedDate: DateTime.now(),
+                  selectionColor: teal,
+                  selectedTextColor: Colors.white,
+                  onDateChange: (date) {
+                    // New date selected
+                    setState(() {
+                      //_selectedValue = date;
+                    });
+                  },
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  children: const [
+                    MyText(
+                      tx: 'Joined  ',
+                      ff: font,
+                      cl: grey,
+                      fs: 14,
+                    ),
+                    MyText(
+                      tx: '12 August 2022',
+                      ff: font,
+                      cl: grey,
+                      fs: 14,
+                      fw: FontWeight.bold,
+                    ),
+                  ],
+                )
               ],
             ),
           ),
