@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 const Color white = Colors.white;
 const Color black = Colors.black;
 const Color grey = Colors.grey;
-const Color red=Colors.redAccent;
-const Color yellow=Colors.yellowAccent;
-const Color lightblack=Colors.black87;
-const Color teal=Colors.teal;
-const Color orange=Colors.deepOrangeAccent;
-const Color lightblue=Colors.lightBlueAccent;
-const Color blue=Color(0xff2196f3);
-
+const Color red = Colors.redAccent;
+const Color yellow = Colors.yellowAccent;
+const Color yellow1 = Colors.yellow;
+const Color lightblack = Colors.black87;
+const Color teal = Colors.teal;
+const Color orange = Colors.deepOrangeAccent;
+const Color lightblue = Colors.lightBlueAccent;
+const Color blue = Color(0xff2196f3);
 
 const String font = 'Roboto Regular';
 
@@ -56,25 +56,26 @@ class MyBox extends StatelessWidget {
   final double width;
   final double height;
   final double iconsize;
-  const MyBox({Key? key,
+  const MyBox({
+    Key? key,
     required this.text,
-    this.fontfamily='Roboto Regular',
-    this.textcolor=white,
+    this.fontfamily = 'Roboto Regular',
+    this.textcolor = white,
     required this.textsize,
     this.fw = FontWeight.normal,
     required this.icon,
-    this.blurcolor=white,
+    this.blurcolor = white,
     required this.bgcolor,
     required this.width,
     required this.height,
-    this.iconcolor=black,
-    this.iconsize=20,
+    this.iconcolor = black,
+    this.iconsize = 20,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width:width,
+      width: width,
       height: height,
       decoration: BoxDecoration(
           color: bgcolor,
@@ -82,19 +83,25 @@ class MyBox extends StatelessWidget {
           //   color: Colors.teal,
           //   width: 5,
           // ),
-          boxShadow:[
+          boxShadow: [
             BoxShadow(
-              blurRadius: 8,
+              blurRadius: 2,
               color: blurcolor,
             )
           ],
-          borderRadius:BorderRadius.circular(20)),
+          borderRadius: BorderRadius.circular(20)),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            Icon(icon,color: iconcolor,size:iconsize,),
-            const SizedBox(width: 5,),
+            Icon(
+              icon,
+              color: iconcolor,
+              size: iconsize,
+            ),
+            const SizedBox(
+              width: 5,
+            ),
             Text(
               text,
               style: TextStyle(
@@ -107,6 +114,76 @@ class MyBox extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class MyRow extends StatefulWidget {
+  final String text;
+  final String fontfamily;
+  final Color textcolor;
+  final double textsize;
+  final FontWeight fw;
+  final IconData icon;
+  final Color iconcolor;
+  final double iconsize;
+  final double radius;
+  final Color circlecolor;
+  final double sizeboxwidth;
+  final double swidth;
+  const MyRow({
+    Key? key,
+    required this.text,
+    this.fontfamily = 'Roboto Regular',
+    this.textcolor = white,
+    required this.textsize,
+    this.fw = FontWeight.normal,
+    required this.icon,
+    this.iconsize = 20,
+    this.iconcolor = black,
+    required this.radius,
+    required this.circlecolor,
+    required this.sizeboxwidth,
+    this.swidth=10,
+  }) : super(key: key);
+
+  @override
+  State<MyRow> createState() => _MyRowState();
+}
+
+class _MyRowState extends State<MyRow> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CircleAvatar(
+          radius: widget.radius,
+          backgroundColor: widget.circlecolor,
+          child: Icon(
+            widget.icon,
+            color: widget.iconcolor,
+            size: widget.iconsize,
+          ),
+        ),
+        SizedBox(
+          width: widget.swidth,
+        ),
+        Text(
+          widget.text,
+          style: TextStyle(
+            color: widget.textcolor,
+            fontFamily: widget.fontfamily,
+            fontSize: widget.textsize,
+            fontWeight: widget.fw,
+          ),
+        ),
+        SizedBox(
+          width: widget.sizeboxwidth,
+        ),
+        const Align(
+            alignment: Alignment.topLeft,
+            child: Icon(Icons.arrow_back_ios_new)),
+      ],
     );
   }
 }

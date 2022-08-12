@@ -77,30 +77,82 @@ class _MyProfileState extends State<MyProfile> {
                   fs: 14,
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 10,
                 ),
                 SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
                   child: Row(
                     children: const [
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal:6),
-                        child: MyBox(text: 'Gamig', textsize: 16, icon:Icons.videogame_asset_outlined,iconsize:18,iconcolor:black, bgcolor:orange, width: 95, height: 35,blurcolor: lightblue,),
+                        child: MyBox(text: 'Gamig', textsize: 16, icon:Icons.videogame_asset_outlined,iconsize:18,iconcolor:black, bgcolor:orange, width: 95, height: 40,blurcolor: lightblue,),
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal:6),
-                        child: MyBox(text: 'Gym', textsize: 16, icon:Icons.sports_gymnastics_sharp,iconsize:18,iconcolor: black, bgcolor: blue, width: 80, height: 35,blurcolor: lightblue,),
+                        child: MyBox(text: 'Gym', textsize: 16, icon:Icons.sports_gymnastics_sharp,iconsize:18,iconcolor: black, bgcolor: blue, width: 80, height: 40,blurcolor: lightblue,),
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 6),
-                        child: MyBox(text: 'Away', textsize: 16, icon:Icons.emoji_emotions_outlined,iconsize:18,iconcolor: yellow, bgcolor: lightblack, width: 90, height: 35,blurcolor: lightblue,),
+                        child: MyBox(text: 'Away', textsize: 16, icon:Icons.emoji_emotions_outlined,iconsize:18,iconcolor: yellow, bgcolor: lightblack, width: 90, height: 40,blurcolor: lightblue,),
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal:6),
-                        child: MyBox(text: 'At Work', textsize: 16, icon:Icons.computer_outlined,iconsize:18,iconcolor:black, bgcolor: teal, width: 100, height: 35,blurcolor: lightblue,),
+                        child: MyBox(text: 'At Work', textsize: 16, icon:Icons.computer_outlined,iconsize:18,iconcolor:black, bgcolor: teal, width: 100, height: 40,blurcolor: lightblue,),
                       ),
 
                     ],
                   ),
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                const MyText(
+                  tx: 'Dashboard',
+                  ff: font,
+                  cl: grey,
+                  fs: 14,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                  child: MyRow(text: 'Payments', textsize:18,textcolor: black,fw: FontWeight.w400, icon:  Icons.payment,iconcolor: white, radius:25, circlecolor:teal,sizeboxwidth: 125,),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                  child: MyRow(text: ' Achievements', textsize:18,textcolor: black,fw: FontWeight.w400, icon:  Icons.accessibility_new_rounded,iconcolor: white, radius:25, circlecolor:yellow1,sizeboxwidth: 85,swidth:7,),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                  child: MyRow(text: 'Privacy', textsize:18,textcolor: black,fw: FontWeight.w400, icon:  Icons.privacy_tip_outlined,iconcolor: white, radius:25, circlecolor:grey,sizeboxwidth: 140,),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const MyText(
+                  tx: 'My Account',
+                  ff: font,
+                  cl: grey,
+                  fs: 14,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const MyText(
+                  tx: 'Switch to other Account',
+                  ff: font,
+                  cl: blue,
+                  fs: 16,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const MyText(
+                  tx: 'Log Out',
+                  ff: font,
+                  cl: red,
+                  fs: 16,
                 ),
 
 
