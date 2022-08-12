@@ -50,17 +50,19 @@ class _EditProfileState extends State<EditProfile> {
                         backgroundColor: grey1,
                       ),
                       CircleAvatar(
-                        radius: 30,
+                        radius: 35,
                         backgroundImage: AssetImage('assets/dp.png'),
                       ),
                       Positioned(
                         bottom: 20,
-                          left: 60,
-                          child: Icon(
-                        Icons.edit_attributes_outlined,
-                        color: blue,
-                        size: 30,
-                      )),
+                          left:63,
+                          child: CircleAvatar(
+                          radius: 10,
+                            child: Icon(Icons.edit_outlined,
+                        color: white,
+                        size:15,
+                      ),
+                          )),
                     ],
                   ),
                 ),
