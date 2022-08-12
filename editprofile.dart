@@ -13,8 +13,8 @@ class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: SafeArea(
-          child: Scaffold(
+      home: SafeArea(
+        child: Scaffold(
           backgroundColor: white,
           body: Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
@@ -36,29 +36,97 @@ class _EditProfileState extends State<EditProfile> {
                         fs: 16,
                       ),
                     ),
-
                   ],
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 30,
+                ),
+                Center(
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: const [
+                      CircleAvatar(
+                        radius: 45,
+                        backgroundColor: grey1,
+                      ),
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage('assets/dp.png'),
+                      ),
+                      Positioned(
+                        bottom: 20,
+                          left: 60,
+                          child: Icon(
+                        Icons.edit_attributes_outlined,
+                        color: blue,
+                        size: 30,
+                      )),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Center(
+                  child: MyText(
+                    tx: 'Bilal Shakeel',
+                    ff: font,
+                    cl: Colors.black,
+                    fs: 20,
+                    fw: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  height: 2,
+                ),
+                const Center(
+                  child: MyText(
+                    tx: 'Junior Developer',
+                    ff: font,
+                    cl: grey,
+                    fs: 12,
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
                 ),
                 const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 6,horizontal: 8),
-                  child: MyTextfield(labeltext: 'Email Address', prefixicon:Icons.email_outlined, prefixcolor:yellow2),
+                  padding: EdgeInsets.symmetric(vertical: 6),
+                  child: MyTextfield(
+                      labeltext: 'Email Address',
+                      prefixicon: Icons.email_outlined,
+                      prefixcolor: yellow2),
                 ),
                 const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 6,horizontal: 8),
-                  child: MyTextfield(labeltext: 'Username', prefixicon:Icons.account_circle_outlined, prefixcolor:red),
+                  padding: EdgeInsets.symmetric(vertical: 6),
+                  child: MyTextfield(
+                      labeltext: 'Username',
+                      prefixicon: Icons.account_circle_outlined,
+                      prefixcolor: red),
                 ),
                 const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 6,horizontal: 8),
-                  child: MyTextField2(labeltext: 'Password', prefixicon:Icons.privacy_tip_outlined, suffixicon: Icons.visibility, prefixcolor:teal, suffixcolor:Colors.blue),
+                  padding: EdgeInsets.symmetric(vertical: 6),
+                  child: MyTextField2(
+                      labeltext: 'Password',
+                      prefixicon: Icons.privacy_tip_outlined,
+                      suffixicon: Icons.visibility,
+                      prefixcolor: teal,
+                      suffixcolor: Colors.blue),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const MyText(
+                  tx: 'Birth Date (Optional)',
+                  ff: font,
+                  cl: grey,
+                  fs: 14,
                 ),
               ],
             ),
           ),
-      ),
         ),
+      ),
     );
   }
 }
